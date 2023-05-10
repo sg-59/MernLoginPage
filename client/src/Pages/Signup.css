@@ -1,0 +1,14 @@
+.Main{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.header{
+    text-decoration: underline;
+    color: cornflowerblue;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
