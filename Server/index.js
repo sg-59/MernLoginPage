@@ -3,7 +3,8 @@ const app=express();
 const mongoose=require('mongoose')
 const dotenv=require('dotenv')
 const cors=require('cors')
-const authRouter=require('./router/auth')
+const userdetails=require('./router/user')
+const authdetails=require('./router/auth')
 
 
 dotenv.config()
@@ -14,8 +15,9 @@ mongoose.connect(process.env.MONGO_URL).then(()=>{
 }).catch((err)=>{
     console.log('error',err);
 }) ;
-
-
-app.listen(4000,()=>{
-    console.log('port 4000 is connected');
+app.use(express.json());
+app.use('/api/ussers',userdetails);
+app.use('/api/autths',authdetails);
+app.listen(5000,()=>{
+    console.log('port 5000 is connected');
 })
